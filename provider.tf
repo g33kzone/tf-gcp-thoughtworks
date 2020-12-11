@@ -1,0 +1,14 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/google"
+      version = "~>3.0"
+    }
+  }
+}
+
+provider "google" {
+  project     = var.project
+  region      = var.region
+  credentials = var.creds
+}
