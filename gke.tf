@@ -13,9 +13,6 @@ resource "google_container_cluster" "kubernetes" {
   network    = google_compute_network.gke_vpc.name
   subnetwork = google_compute_subnetwork.gke_subnet.name
 
-  # network    = google_compute_network.vpc.name
-  # subnetwork = google_compute_subnetwork.subnet.name
-
   master_auth {
     username = var.gke_username
     password = var.gke_password
