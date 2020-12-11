@@ -9,9 +9,7 @@ variable "project_id" {
   description = "GCP Project ID"
 }
 
-variable "creds" {
-  description = "GCP credentials"
-}
+variable "creds" {}
 
 variable "gke_username" {
   default     = ""
