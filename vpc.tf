@@ -1,11 +1,11 @@
 # VPC
-resource "google_compute_network" "gke-vpc" {
+resource "google_compute_network" "gke_vpc" {
   name                    = "${var.project_id}-vpc"
   auto_create_subnetworks = "false"
 }
 
 # Subnet
-resource "google_compute_subnetwork" "gke-subnet" {
+resource "google_compute_subnetwork" "gke_subnet" {
   name          = "${var.project_id}-subnet"
   region        = var.region
   network       = google_compute_network.vpc.name
