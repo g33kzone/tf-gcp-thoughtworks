@@ -37,27 +37,3 @@ variable "machine_type" {
   default     = "n1-standard-1"
   description = "Machine Type for GKE Nodes"
 }
-
-variable "yaml_filename" {
-  type        = string
-  default     = "cloudbuild.yaml"
-  description = "Cloudbuild yaml"
-}
-
-variable "repo_owner" {
-  type        = string
-  default     = "g33kzone"
-  description = "Repository owner name"
-}
-
-variable "repo_name" {
-  type        = string
-  default     = "go-gin-palindrome"
-  description = "Repo name"
-}
-
-variable "repo_branch" {
-  type        = string
-  default     = "main"
-  description = "Repo default branch"
-}
