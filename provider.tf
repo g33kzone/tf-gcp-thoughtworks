@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    aws = {
+    google = {
       source  = "hashicorp/google"
       version = "~>3.0"
     }
@@ -12,9 +12,3 @@ provider "google" {
   region      = var.region
   credentials = var.creds
 }
-
-# variable "creds" {}
-# provider "google" {
-#   credentials = var.creds
-#   project     = var.project_id
-# }
