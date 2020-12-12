@@ -37,3 +37,13 @@ variable "machine_type" {
   default     = "n1-standard-1"
   description = "Machine Type for GKE Nodes"
 }
+
+variable "db_host" {
+  type = string
+  description = "DB Host"
+}
+
+variable "db_password" {
+  type = string
+  description = "DB Password"
+}
