@@ -8,7 +8,13 @@ terraform {
 }
 
 provider "google" {
-  project     = var.project
+  project     = var.project_id
   region      = var.region
   credentials = var.creds
 }
+
+# variable "creds" {}
+# provider "google" {
+#   credentials = var.creds
+#   project     = var.project_id
+# }
