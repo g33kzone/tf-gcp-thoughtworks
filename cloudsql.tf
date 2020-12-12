@@ -1,3 +1,8 @@
+resource "google_project_service" "cloudsql_api" {
+  project = var.project_id
+  service = "sqladmin.googleapis.com"
+}
+
 resource "google_sql_database_instance" "postgresdb" {
   name             = "db-palindrome"
   database_version = "POSTGRES_11"
@@ -6,6 +11,7 @@ resource "google_sql_database_instance" "postgresdb" {
   settings {
     tier = var.machine_type
   }
+  depends_on = [ google_project_service.cloudsql_api ]
 }
 
 resource "google_sql_user" "users" {
