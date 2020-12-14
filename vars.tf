@@ -38,9 +38,9 @@ variable "machine_type" {
   description = "Machine Type for GKE Nodes"
 }
 
-variable "db_host" {
+variable "db_user" {
   type = string
-  description = "DB Host"
+  description = "DB User"
 }
 
 variable "db_password" {
@@ -51,4 +51,9 @@ variable "db_password" {
 variable "db_instance" {
   type = string
   description = "DB Instance name"
+}
+
+variable "db_name" {
+  type = string
+  description = "DB name"
 }
