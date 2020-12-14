@@ -8,6 +8,10 @@ resource "google_sql_database_instance" "postgresdb" {
   database_version = "POSTGRES_11"
   region           = "us-central1"
 
+  settings {
+    tier = "db-f1-micro"
+  }
+
   depends_on = [ google_project_service.cloudsql_api ]
 }
 
