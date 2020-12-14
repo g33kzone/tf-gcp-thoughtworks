@@ -14,7 +14,7 @@ resource "google_sql_database_instance" "postgres_instance" {
     tier = "db-f1-micro"
   }
 
-  depends_on = [ google_project_service.cloudsql_api ]
+  depends_on = [google_project_service.cloudsql_api]
 }
 
 resource "google_sql_database" "postgres_db" {

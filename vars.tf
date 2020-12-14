@@ -39,21 +39,36 @@ variable "machine_type" {
 }
 
 variable "db_user" {
-  type = string
+  type        = string
   description = "DB User"
 }
 
 variable "db_password" {
-  type = string
+  type        = string
   description = "DB Password"
 }
 
 variable "db_instance" {
-  type = string
+  type        = string
   description = "DB Instance name"
 }
 
 variable "db_name" {
-  type = string
+  type        = string
   description = "DB name"
+}
+
+variable "repo_owner" {
+  type        = string
+  description = "Repo Owner"
+}
+
+variable "repo_name" {
+  type        = string
+  description = "Repo Name"
+}
+
+variable "repo_branch" {
+  type        = string
+  description = "Repo default branch"
 }

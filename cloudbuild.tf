@@ -4,16 +4,16 @@ resource "google_project_service" "cloudbuild_api" {
 }
 
 resource "google_cloudbuild_trigger" "cloudbuild_go_palindrome" {
-  provider = "google-beta"
+  provider = google-beta
   name     = "cloudbuild-go-palindrome"
 
   filename = "cloudbuild.yaml"
 
   github {
-    owner       = "g33kzone"
-    name        = "go-gin-palindrome"
+    owner = var.repo_owner
+    name  = var.repo_name
     push {
-      branch = "main"
+      branch = var.repo_branch
     }
   }
 
