@@ -47,3 +47,8 @@ variable "db_password" {
   type = string
   description = "DB Password"
 }
+
+variable "db_instance" {
+  type = string
+  description = "DB Instance name"
+}

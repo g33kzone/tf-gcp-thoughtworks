@@ -4,13 +4,10 @@ resource "google_project_service" "cloudsql_api" {
 }
 
 resource "google_sql_database_instance" "postgresdb" {
-  name             = "db-palindrome"
+  name             = var.db_instance
   database_version = "POSTGRES_11"
   region           = "us-central1"
 
-  settings {
-    tier = "db-n1-standard-2"
-  }
   depends_on = [ google_project_service.cloudsql_api ]
 }
 
