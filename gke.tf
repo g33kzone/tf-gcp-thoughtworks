@@ -25,6 +25,26 @@ resource "google_container_cluster" "k8s_cluster" {
   depends_on = [google_project_service.container_api]
 }
 
+# Get the credentials 
+resource "null_resource" "get-credentials" {
+
+ depends_on = [google_container_cluster.k8s_cluster] 
+ 
+ provisioner "local-exec" {
+   command = "gcloud container clusters get-credentials ${google_container_cluster.k8s_cluster.name} --region=us-central1"
+ }
+}
+
+# Create a namespace
+resource "kubernetes_namespace" "gke-namespace" {
+
+ depends_on = [null_resource.get-credentials]
+
+ metadata {
+   name = "ns-thoughtworks"
+ }
+}
+
 resource "google_container_node_pool" "node_pool" {
   name       = "${google_container_cluster.k8s_cluster.name}-node-pool"
   location   = var.region
