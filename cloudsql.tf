@@ -9,7 +9,7 @@ resource "google_sql_database_instance" "postgresdb" {
   region           = "us-central1"
 
   settings {
-    tier = "db-n1-standard-1"
+    tier = "db-n1-standard-2"
   }
   depends_on = [ google_project_service.cloudsql_api ]
 }
