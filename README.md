@@ -30,7 +30,7 @@ The following softwares must be installed in your system
    git clone https://github.com/g33kzone/tf-gcp-thoughtworks.git
    ```
 2. Create GCP service account with relevant roles for the GCP Project [refer documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
-3. Configure this service account key to make request against GCP API via Terraform [refer documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
+3. Configure this service account key to make request against GCP API via Terraform [refer documentation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/getting_started#adding-credentials)
 4. Initialize the working directory containing Terraform configuration files
    ```sh
    terraform init
