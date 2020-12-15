@@ -16,7 +16,7 @@ The following softwares must be installed in your system
 * Git command line tool (https://help.github.com/articles/set-up-git)
 * Your preferred IDE
   * [VS Code](https://code.visualstudio.com)
-* [GCP Account - Free Tier](https://aws.amazon.com/free)
+* [GCP Account - Free Tier](https://cloud.google.com/free)
 <br/>
 
 <!-- Software Version -->
@@ -27,25 +27,24 @@ The following softwares must be installed in your system
 ### Steps
 1. On the Command line
    ```sh
-   git clone https://github.com/g33kzone/terraform.git
+   git clone https://github.com/g33kzone/tf-gcp-thoughtworks.git
    ```
-2. Checkout Folder
-   ```sh
-   cd terraform && cd aws && cd ec2 && cd 01-ec2-basic
-   ```
-3. Initialize the working directory containing Terraform configuration files
+2. Create GCP service account with relevant roles for the GCP Project [refer documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
+3. Configure this service account key to make request against GCP API via Terraform [refer documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
+4. Initialize the working directory containing Terraform configuration files
    ```sh
    terraform init
    ```
-4. Create Terraform execution plan
+5. Create Terraform execution plan
    ```sh
    terraform plan
    ```
-5. Apply the changes required to achieve the desired state of configuration
+6. Apply the changes required to achieve the desired state of configuration
    ```sh
    terraform apply -auto-approve
    ```
-6. Validate the creation of EC2 instance in AWS Console (i.e. Name - aws-ec2-basic-temp)
-7. Destroy the EC2 instance created & managed by Terraform
+7. Validate the creation of GCP Infra Stack
+8. To destroy the infrastructure created & managed by Terraform
    ```sh
    terraform destroy -auto-approve
+   ```

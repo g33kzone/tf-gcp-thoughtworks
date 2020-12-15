@@ -3,8 +3,12 @@ resource "google_project_service" "cloudsql_api" {
   service = "sqladmin.googleapis.com"
 }
 
+resource "random_id" "sql_db_id" {
+  byte_length = 6
+}
+
 resource "google_sql_database_instance" "postgres_instance" {
-  name             = var.db_instance
+  name             = "thoughtworks-devops-${random_id.sql_db_id.hex}"
   database_version = "POSTGRES_11"
   region           = var.region
 
